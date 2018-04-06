@@ -1,0 +1,9 @@
+C:\Users\adamt\source\repos\ConsumeTheDogAPI\ConsumeTheDogAPI\obj\Debug\ConsumeTheDogAPI.csprojResolveAssemblyReference.cache
+C:\Users\adamt\source\repos\ConsumeTheDogAPI\ConsumeTheDogAPI\obj\Debug\ConsumeTheDogAPI.csproj.CoreCompileInputs.cache
+C:\Users\adamt\source\repos\ConsumeTheDogAPI\ConsumeTheDogAPI\bin\Debug\ConsumeTheDogAPI.exe.config
+C:\Users\adamt\source\repos\ConsumeTheDogAPI\ConsumeTheDogAPI\bin\Debug\ConsumeTheDogAPI.exe
+C:\Users\adamt\source\repos\ConsumeTheDogAPI\ConsumeTheDogAPI\bin\Debug\ConsumeTheDogAPI.pdb
+C:\Users\adamt\source\repos\ConsumeTheDogAPI\ConsumeTheDogAPI\obj\Debug\ConsumeTheDogAPI.exe
+C:\Users\adamt\source\repos\ConsumeTheDogAPI\ConsumeTheDogAPI\obj\Debug\ConsumeTheDogAPI.pdb
+C:\Users\adamt\source\repos\ConsumeTheDogAPI\ConsumeTheDogAPI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\adamt\source\repos\ConsumeTheDogAPI\ConsumeTheDogAPI\bin\Debug\Newtonsoft.Json.xml
