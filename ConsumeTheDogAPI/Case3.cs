@@ -26,8 +26,28 @@ namespace ConsumeTheDogAPI
 
             if (o["status"].ToString() == "error")
             {
-                Console.WriteLine(userBreed + " subreeds could not be found. (Try hound or mastiff)");
-                PrintSpecifiedSubBreeds();
+                Console.WriteLine(userBreed + " subreeds could not be found.");
+                Console.WriteLine("1) Go back to main menu." +
+                                "\n2) Enter a different breed");
+
+                if(int.TryParse(Console.ReadLine(), out int userChoice))
+                {
+                    if (userChoice == 1)
+                    {
+                        Program.ShowList();
+                    }
+                    else if (userChoice == 2)
+                    {
+                        PrintSpecifiedSubBreeds();
+                    }
+                }       
+                else
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("This application did not understand your input. Taking you back to the main menu.");
+                    Program.ShowList();
+                }
+
             }
 
             List<string> subBreeds = new List<string>();
@@ -43,6 +63,6 @@ namespace ConsumeTheDogAPI
             Console.WriteLine("");
             System.Threading.Thread.Sleep(400);
             Program.ShowList();
-        }       
+        }
     }
 }

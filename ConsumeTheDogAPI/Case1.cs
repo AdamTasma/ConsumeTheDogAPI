@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Net;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+//using System.Web.Script.Serialization.JavaScriptSerializer;
 
 namespace ConsumeTheDogAPI
 {
@@ -19,16 +20,24 @@ namespace ConsumeTheDogAPI
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader rd = new StreamReader(response.GetResponseStream());
             String data = rd.ReadToEnd();
-            JObject o = JObject.Parse(data);
-            JToken wholeFile = o["message"];
-            Console.WriteLine(wholeFile);
-            //JObject message = o["message"];
 
-            var jarray = JsonConvert.DeserializeObject<List<object>>(data);
+            //converts the json file into an object
+            dynamic obj = JsonConvert.DeserializeObject<dynamic>(data);
+            //now we only concern ourselves with the message object
+            var message = obj.message;
+            //message comes in as variables and keys(the dynamic name), or subBreeds and Breed
+            //assign the correct properties to the variables
+            foreach (var breed in message)
+            {
+                var breedName = breed.Name;
+                Console.WriteLine(breedName);
+                var subBreeds = breed.Value;
+                foreach (var subBreed in subBreeds)
+                {
 
-             
-
-
+                    Console.WriteLine(subBreed.Value + " " + breedName);
+                }
+            }
 
             Console.WriteLine("");
             System.Threading.Thread.Sleep(400);
