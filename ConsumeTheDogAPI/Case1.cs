@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace ConsumeTheDogAPI
 {
@@ -18,49 +19,17 @@ namespace ConsumeTheDogAPI
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             StreamReader rd = new StreamReader(response.GetResponseStream());
             String data = rd.ReadToEnd();
-            //JObject o = JObject.Parse(data);
-            //JToken message = o["message"];
-
-            //List<string[]> breeds = new List<string[]>();
-
-            //for (int i = 0; i < o["message"].Count(); i++)
-            //{
-            //    string input = o["message"][i].ToString();
-            //    breeds.Add(input);
-            //}
-            //foreach (string[] breed in breeds)
-            //{
-            //    Console.WriteLine(breed);
-            //}
-
-            //JObject jResults = JObject.Parse(jsonfeed);
-            //JToken jResults_bank = jResults["bank"];
-
-            //foreach (JObject bank in jResults_bank)
-            //{
-            //    JToken jResults_bank_endpoint = bank["endpoints"];
-            //    foreach (JObject endpoint in jResults_bank_endpoint)
-            //    {
-            //        if (bank["epName"].ToString() == "FRED001")
-            //        {
-            //            MessageBow.Show(bank["epId"].ToString());
-            //        }
-            //    }
-            //}
-
-            //JObject jResults = JObject.Parse(data);
-            //JToken jResults_message = jResults["message"];
-            //List<Array> myList = new List<Array>();
-            //foreach (JObject message in jResults_message)
-            //{
-            //    JToken jResults_message_breed = message;
-            //    Console.WriteLine(message);
-            //    //myList.Add(jResults_message_breed);
-            //}
-
-            //JObject o = JObject.Parse(data);
+            JObject o = JObject.Parse(data);
+            JToken wholeFile = o["message"];
+            Console.WriteLine(wholeFile);
             //JObject message = o["message"];
-            //Console.WriteLine(message.bulldog); 
+
+            var jarray = JsonConvert.DeserializeObject<List<object>>(data);
+
+             
+
+
+
             Console.WriteLine("");
             System.Threading.Thread.Sleep(400);
             Program.ShowList();

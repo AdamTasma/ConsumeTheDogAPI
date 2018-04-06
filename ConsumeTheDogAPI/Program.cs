@@ -54,7 +54,7 @@ namespace ConsumeTheDogAPI
             }
             else
             {
-                Console.WriteLine("Please enter a number, for example '2'.");
+                Console.WriteLine("Please enter a number, for example 2.");
                 ShowList();
             }
         }

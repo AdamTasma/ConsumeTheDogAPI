@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 using Newtonsoft.Json.Linq;
-//using static System.Net.Mime.MediaTypeNames;
 
 namespace ConsumeTheDogAPI
 {
@@ -56,6 +55,7 @@ namespace ConsumeTheDogAPI
                 fs.Close();
                 bw.Close();
             }
+
             Console.WriteLine("Image was saved at " + saveLocation);
             Console.WriteLine("");
             System.Diagnostics.Process.Start(saveLocation);
